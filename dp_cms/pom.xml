@@ -3,20 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.macroflag</groupId>
-		<artifactId>dp_core</artifactId>
+		<artifactId>dp_project</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>dp_cms</artifactId>
 	<packaging>war</packaging>
 	<name>dp_cms</name>
 	<description>dp_cms</description>
-	<dependencies>
-		<dependency>
-			<groupId>com.macroflag</groupId>
-			<artifactId>common</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
@@ -37,4 +30,11 @@
 			</plugin>
 		</plugins>
 	</build>
+	<dependencies>
+		<dependency>
+			<groupId>com.macroflag</groupId>
+			<artifactId>common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 </project>

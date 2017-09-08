@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.macroflag</groupId>
-    <artifactId>dp_core</artifactId>
+    <artifactId>dp_project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>common</artifactId>
