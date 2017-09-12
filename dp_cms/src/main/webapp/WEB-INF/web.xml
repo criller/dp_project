@@ -68,4 +68,10 @@
         <servlet-name>springmvc</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    <jsp-config>
+        <taglib>
+            <taglib-uri>/tags</taglib-uri>
+            <taglib-location>/WEB-INF/tag/datetag.tld</taglib-location>
+        </taglib>
+    </jsp-config>
 </web-app>

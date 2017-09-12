@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding= "UTF-8"?>
+<taglib>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>1.2</jsp-version>
+
+    <short-name>date</short-name>
+    <uri>http://tag.macroflag.com/jsp/jstl/date</uri>
+
+    <tag>
+        <name>long2date</name>
+        <tag-class>com.macroflag.util.tag.DateTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+</taglib>

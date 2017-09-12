@@ -2,6 +2,7 @@
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://tag.macroflag.com/jsp/jstl/date" prefix="date"%>
 <jsp:include page="../public/frame.jsp"></jsp:include>
 <jsp:include page="../public/header.jsp"></jsp:include>
 <!-- Start: Sidebar -->
@@ -38,7 +39,9 @@
 									<tr>
 										<td>${mdm.id}</td>
 										<td>${mdm.dpaUuid}</td>
-										<td>${mdm.time }</td>
+										<td>
+											<date:long2date value="${mdm.time}"></date:long2date>
+										</td>
 										<td>${mdm.domain }</td>
 										<td>${mdm.url }</td>
 										<td>${mdm.screenHeight }</td>
