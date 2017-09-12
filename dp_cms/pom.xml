@@ -19,7 +19,7 @@
 				<configuration>
 					<scanIntervalSeconds>5</scanIntervalSeconds>
 					<webApp>
-						<contextPath>/cms</contextPath>
+						<contextPath>/admin</contextPath>
 					</webApp>
 					<connectors>
 						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">

@@ -4,6 +4,7 @@
 	<typeAliases>
 		<typeAlias type="com.macroflag.dp_cms.vo.CustomerModel" alias="CM"/>
 		<typeAlias type="com.macroflag.dp_cms.vo.CustomerQueryModel" alias="CQM"/>
+		<typeAlias type="com.macroflag.dp_cms.vo.MetadataModel" alias="MDM"/>
 	</typeAliases>
 	<plugins>
 		<plugin interceptor="com.macroflag.pageutil.PagePlugin">
