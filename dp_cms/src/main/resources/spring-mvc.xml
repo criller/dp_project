@@ -21,14 +21,22 @@
 
 	<!-- 会自动注册了validator ConversionService -->
 	<mvc:annotation-driven></mvc:annotation-driven>
-
+	<!-- 拦截器配置 -->
+	<mvc:interceptors>
+		<!-- 登录认证 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/static/**"/>
+			<bean class="com.macroflag.dp_cms.interceptor.LoginInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
 	<mvc:default-servlet-handler />
 	<mvc:resources mapping="/static/**" location="/WEB-INF/static/" />
-	
 	<!-- 默认的视图解析器 在上边的解析错误时使用 (默认使用html)- -->
 	<bean id="defaultViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="viewClass"	value="org.springframework.web.servlet.view.JstlView" />
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
 		<property name="contentType" value="text/html" />
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />

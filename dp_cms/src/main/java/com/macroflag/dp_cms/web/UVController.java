@@ -24,7 +24,7 @@ public class UVController {
 	
 	@RequestMapping(value="getUV",method= {RequestMethod.GET,RequestMethod.POST})
 	public @ResponseBody UVQueryModel getUV(@RequestParam(value="startDate") String startDate,@RequestParam(value="endDate") String endDate) {
-		UVQueryModel pv = this.metadataService.getUV(startDate, endDate);
-		return pv;
+		UVQueryModel uv = this.metadataService.getUV(startDate, endDate);
+		return uv;
 	}
 }

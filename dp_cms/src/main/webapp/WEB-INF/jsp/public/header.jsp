@@ -4,14 +4,14 @@
 <!-- Start: Header -->
 <header class="navbar navbar-fixed-top navbar-shadow">
 	<div class="navbar-branding">
-		<a class="navbar-brand" href="dashboard.html"> <b>旗计智能</b>|数据平台
+		<a class="navbar-brand" href="${pageContext.request.contextPath}/index/list"> <b>${company_name }</b>|${system_name}
 		</a> <span id="toggle_sidemenu_l" class="ad ad-lines"></span>
 	</div>
 	<ul class="nav navbar-nav navbar-right">
 		<li class="dropdown menu-merge">
 		<a href="#"
 			class="dropdown-toggle fw600 p15" data-toggle="dropdown">
-				<span class="hidden-xs pl15">开发者</span> <span
+				<span class="hidden-xs pl15">${sessionScope.user}</span> <span
 				class="caret caret-tp hidden-xs"></span>
 		</a>
 			<ul class="dropdown-menu list-group dropdown-persist w250"
@@ -24,7 +24,7 @@
 					class="animated animated-short fadeInUp"> <span
 						class="fa fa-gear"></span> 设置
 				</a></li>
-				<li class="dropdown-footer"><a href="#" class=""> <span
+				<li class="dropdown-footer"><a href="${pageContext.request.contextPath}/logout" class=""> <span
 						class="fa fa-power-off pr5"></span> 退出登录
 				</a></li>
 			</ul></li>
