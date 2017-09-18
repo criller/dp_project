@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-	 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 
@@ -33,6 +33,15 @@
 <link rel="shortcut icon"
 	href="${pageContext.request.contextPath}/static/admin/assets/img/favicon.ico">
 
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/static/layui/css/layui.css">
+	
+	<!-- jQuery -->
+<script
+	src="${pageContext.request.contextPath}/static/admin/vendor/jquery/jquery-1.11.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/layui/layui.js"></script>
+<script
+	src="${pageContext.request.contextPath}/static/admin/js/echarts.min.js"></script>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>

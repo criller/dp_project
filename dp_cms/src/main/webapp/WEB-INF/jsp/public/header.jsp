@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<jsp:include page="../public/frame.jsp"></jsp:include>
 <!-- Start: Header -->
 <header class="navbar navbar-fixed-top navbar-shadow">
 	<div class="navbar-branding">

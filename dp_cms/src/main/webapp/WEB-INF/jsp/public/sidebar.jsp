@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<jsp:include page="../public/header.jsp"></jsp:include>
 <aside id="sidebar_left" class="nano nano-light affix">
 
 	<!-- Start: Sidebar Left Content -->
@@ -18,11 +19,11 @@
 					<li class="active"><a href="${pageContext.request.contextPath}/analytics/index"> <span
 							class="glyphicon glyphicon-book"></span>元数据
 					</a></li>
-					<li><a href="admin_plugins-modals.html"> <span
-							class="glyphicon glyphicon-modal-window"></span> 网站基础指标
+					<li><a href="${pageContext.request.contextPath}/uv/list"> <span
+							class="glyphicon glyphicon-modal-window"></span>UV分析
 					</a></li>
-					<li><a href="admin_plugins-dock.html"> <span
-							class="glyphicon glyphicon-equalizer"></span>老板概览
+					<li><a href="${pageContext.request.contextPath}/pv/list"> <span
+							class="glyphicon glyphicon-equalizer"></span>PV分析
 					</a></li>
 					<li><a href="admin_plugins-dock.html"> <span
 							class="glyphicon glyphicon-equalizer"></span>渠道分析

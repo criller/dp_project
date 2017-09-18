@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.macroflag.dp_cms.vo.MetadataModel;
 import com.macroflag.dp_cms.vo.MetadataQueryModel;
+import com.macroflag.dp_cms.vo.PVQueryModel;
+import com.macroflag.dp_cms.vo.UVQueryModel;
 
 public interface IMetadataService {
 	/**
@@ -31,11 +33,13 @@ public interface IMetadataService {
 	 * 分页查询
 	 * @return
 	 */
-	public List<MetadataQueryModel> findByPage();
+	public List<MetadataQueryModel> findByPage(MetadataQueryModel mqm);
 	/**
 	 * 查询所有元数据
 	 * @return
 	 */
 	public List<MetadataQueryModel> findAll();
 	
+	public UVQueryModel getUV(String startDate,String endDate);
+	public PVQueryModel getPV(String startDate,String endDate,String url);
 }

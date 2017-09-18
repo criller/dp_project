@@ -10,9 +10,7 @@
 </footer>
 <!-- End: Page Footer -->
 <!-- End: Main -->
-<!-- jQuery -->
-<script
-	src="${pageContext.request.contextPath}/static/admin/vendor/jquery/jquery-1.11.1.min.js"></script>
+
 <script
 	src="${pageContext.request.contextPath}/static/admin/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
 

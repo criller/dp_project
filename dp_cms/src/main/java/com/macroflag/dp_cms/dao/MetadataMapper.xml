@@ -24,13 +24,72 @@
 		select *
 		from tbl_customer where uuid = #{uuid}
 	</select>
-	<select id="getByCondition" parameterType="com.macroflag.dp_cms.vo.MetadataQueryModel" resultType="com.macroflag.dp_cms.vo.MetadataQueryModel">
-		select * from dp_metadata
+	<select id="getByCondition" parameterType="com.macroflag.dp_cms.vo.MetadataQueryModel"
+		resultType="com.macroflag.dp_cms.vo.MetadataQueryModel">
+		select * ,(select count(*) from dp_metadata) count from dp_metadata
 		<where>
 			<if test="dpaUuid">
 				and $dpa_uuid=#{dpaUuid}
 			</if>
 		</where>
 		order by id desc
+		<choose>
+			<when test="page >1 and limit >0">
+				limit #{page},#{limit}
+			</when>
+			<when test="page ==1 and limit >0">
+				limit 0,#{limit}
+			</when>
+		</choose>
+	</select>
+	<resultMap type="com.macroflag.dp_cms.vo.UVQueryModel" id="getUVResultMap">
+		<collection property="dateList" ofType="java.lang.String"
+			column="time"></collection>
+		<collection property="hitList" ofType="java.lang.Integer">
+			<result column="hitNum" />
+		</collection>
+	</resultMap>
+
+	<select id="getUV" parameterType="com.macroflag.dp_cms.vo.UVQueryModel"
+		resultMap="getUVResultMap">
+		select date_format(time,'%Y-%m-%d') time,count(*) hitNum
+		from
+		dp_metadata
+		<where>
+			<if test="startDate != null">
+			<![CDATA[and time >= ]]>#{startDate}
+			</if>
+			<if test="endDate != null">
+				<![CDATA[and time <= ]]>#{endDate}
+			</if>
+		</where>
+		GROUP BY date_format(time,'%Y-%m-%d')
+	</select>
+
+	<resultMap type="com.macroflag.dp_cms.vo.PVQueryModel" id="getPVResultMap">
+		<collection property="dateList" ofType="java.lang.String"
+			column="time"></collection>
+		<collection property="hitList" ofType="java.lang.Integer">
+			<result column="hitNum" />
+		</collection>
+	</resultMap>
+	<select id="getPV" parameterType="com.macroflag.dp_cms.vo.PVQueryModel"
+		resultMap="getPVResultMap">
+		select date_format(time,'%Y-%m-%d') time,count(*) hitNum
+		from
+		dp_metadata
+		<where>
+			<if test="url != null">
+				<if test="startDate != null">
+			<![CDATA[and time >= ]]>#{startDate}
+				</if>
+				<if test="endDate != null">
+				<![CDATA[and time <= ]]>#{endDate}
+				</if>
+				and url=#{url}
+			</if>
+		</where>
+		GROUP BY date_format(time,'%Y-%m-%d'),url
+		order by time
 	</select>
 </mapper>

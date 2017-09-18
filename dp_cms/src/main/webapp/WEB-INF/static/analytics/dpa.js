@@ -5,6 +5,27 @@
  * */
 (function () {
     window.$qj = {};
+    
+    Date.prototype.format = function(fmt) { 
+        var o = { 
+           "M+" : this.getMonth()+1,                 //月份 
+           "d+" : this.getDate(),                    //日 
+           "h+" : this.getHours(),                   //小时 
+           "m+" : this.getMinutes(),                 //分 
+           "s+" : this.getSeconds(),                 //秒 
+           "q+" : Math.floor((this.getMonth()+3)/3), //季度 
+           "S"  : this.getMilliseconds()             //毫秒 
+       }; 
+       if(/(y+)/.test(fmt)) {
+               fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+       }
+        for(var k in o) {
+           if(new RegExp("("+ k +")").test(fmt)){
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+            }
+        }
+       return fmt; 
+   };
 
     /**
      * 操作函数
@@ -115,13 +136,13 @@
         //获取当前页面的数据
         getCurrentPageData: function () {
             var params = {};
-
+            console.log($qj.dealFunc.getCookie("dpa_uuid"));
             //收集用户的dpa_uuid,time,
-            if (document.cookie == "" || document.cookie.length == 0) {
+            if ($qj.dealFunc.getCookie("dpa_uuid")== null || $qj.dealFunc.getCookie("dpa_uuid") =="") {
                 $qj.dealFunc.setCookie("dpa_uuid", $qj.dealFunc.getUuid(), "s60");
             }
             params.dpaUuid = $qj.dealFunc.getCookie("dpa_uuid");   //用户唯一标识号
-            params.time = new Date().getTime(); //事件触发的时间
+            params.time = new Date().format("yyyy-MM-dd hh:mm:ss"); //事件触发的时间
 
             //Document对象数据
             if (document) {
@@ -197,6 +218,13 @@
         e.stopPropagation();    //停止冒泡
         params.eXPath = $qj.elementData.readXPath(e.target);    //获取元素的XPath路径
         $qj.option.send(params);
+    });
+    
+    /**
+     * 自动监听页面加载事件
+     */
+    window.addEventListener("onload", function (e) {
+        alert("aaaaa");
     });
 
 })();

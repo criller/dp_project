@@ -1,5 +1,12 @@
 package com.macroflag.dp_cms.vo;
 
+
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**
  * 元数据实体类
  * @author caocheng
@@ -8,7 +15,8 @@ package com.macroflag.dp_cms.vo;
 public class MetadataModel {
 	private int id;
 	private String dpaUuid;
-	private Long time;
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	private Date time;
 	private String domain;
 	private String url;
 	private int screenHeight;
@@ -29,10 +37,11 @@ public class MetadataModel {
 	public void setDpaUuid(String dpaUid) {
 		this.dpaUuid = dpaUid;
 	}
-	public Long getTime() {
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="Asia/Shanghai")
+	public Date getTime() {
 		return time;
 	}
-	public void setTime(Long time) {
+	public void setTime(Date time) {
 		this.time = time;
 	}
 	public String getDomain() {
