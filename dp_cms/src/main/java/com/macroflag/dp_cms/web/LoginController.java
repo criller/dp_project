@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.macroflag.dp_cms.service.ILoginService;
-import com.macroflag.dp_cms.vo.User;
+import com.macroflag.dp_cms.vo.UserModel;
 
 @Controller
 public class LoginController {
@@ -30,7 +30,7 @@ public class LoginController {
 	@RequestMapping(value = "/login_submit", method = RequestMethod.POST)
 	public String login_submit(HttpSession session, Model model, @RequestParam("username") String username,
 			@RequestParam("password") String password) {
-		User user = this.loginService.isAuth(username, password);
+		UserModel user = this.loginService.isAuth(username, password);
 		// 向session记录用户身份信息
 		if (user == null || user.getUsername() == null) {
 			// 登陆认证失败，转发到登陆页，并提示

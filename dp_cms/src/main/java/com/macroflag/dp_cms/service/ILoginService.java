@@ -1,6 +1,6 @@
 package com.macroflag.dp_cms.service;
 
-import com.macroflag.dp_cms.vo.User;
+import com.macroflag.dp_cms.vo.UserModel;
 
 /**
  * 登陆权限认证
@@ -14,5 +14,5 @@ public interface ILoginService {
 	 * @param password
 	 * @return
 	 */
-	public User isAuth(String username,String password);
+	public UserModel isAuth(String username,String password);
 }
