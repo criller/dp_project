@@ -78,6 +78,7 @@
 			} ] ],
 			page : true
 		//开启分页
+		
 		});
 		//监听工具条
 		table.on('tool(user)', function(obj) { //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
