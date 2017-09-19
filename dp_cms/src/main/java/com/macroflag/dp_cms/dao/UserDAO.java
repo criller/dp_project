@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.macroflag.dp_cms.vo.UserModel;
+import com.macroflag.dp_cms.vo.UserQueryModel;
 
 @Repository
 public interface UserDAO {
@@ -30,7 +31,7 @@ public interface UserDAO {
 	 * @param user
 	 * @return
 	 */
-	public List<UserModel> getByCondition(UserModel user);
+	public List<UserQueryModel> getByCondition(UserModel user);
 	/**
 	 * 根据ID删除用户
 	 * @param id

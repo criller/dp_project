@@ -77,8 +77,9 @@
 			<li><a class="accordion-toggle" href="#"> <span
 					class="fa fa-diamond"></span> <span class="sidebar-title">菜单管理</span>
 			</a></li>
-			<li><a class="accordion-toggle" href="#"> <span
-					class="fa fa-diamond"></span> <span class="sidebar-title">用户管理</span>
+			<li><a href="${pageContext.request.contextPath}/user/index"> <span
+					class="glyphicon glyphicon-home"></span> <span
+					class="sidebar-title">用户管理</span>
 			</a></li>
 		</ul>
 		<!-- End: Sidebar Menu -->
